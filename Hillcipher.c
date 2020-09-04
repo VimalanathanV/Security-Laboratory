@@ -17,11 +17,17 @@ int main()
         plain[i][0]=string[i]-97;
     }
     for(int i = 0; i < 3; i++)
-		for(int j = 0; j < 1; j++)
+		{ 
+		    int j = 0;
+		    cipher[i][j]=0;
 			for(int k = 0; k < 3; k++)
-				cipher[i][j]+= key[i][k] * plain[k][j];
+			{
+				cipher[i][j]+= (key[i][k] * plain[k][j]);
+				
+			}
+		}
 	printf("Encrypted Text:\n");
 	for(int i = 0; i < 3; i++)
-		printf("%c", (char)(fmod(cipher[i][0], 26) + 65));
+		printf("%c", ((cipher[i][0])%26)+65);
 }
 

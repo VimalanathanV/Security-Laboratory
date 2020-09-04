@@ -22,5 +22,6 @@ int main()
 				cipher[i][j]+= key[i][k] * plain[k][j];
 	printf("Encrypted Text:\n");
 	for(int i = 0; i < 3; i++)
-		printf("%c ",(cipher[i][0]%26)+65);
+		printf("%c", (char)(fmod(cipher[i][0], 26) + 65));
 }
+
